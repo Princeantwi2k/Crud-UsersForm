@@ -1,30 +1,21 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container,Row,Col } from 'react-bootstrap';
-import Userlist from "./Component/Userlist";
-import AddUser from "./Component/AddUser";
-import './App.css';
-
-import React, { Component } from 'react';
-
-class App extends Component {
-
-   
-  render() {
-    return (
-      <>
-      <Container>
-        <Row>
-          <Col xs={6} md={4} >
-            <AddUser   />
-          </Col>
-          <Col xs={6} md={2} className="box">
-            <Userlist  />
-          </Col>
-        </Row>
-      </Container>
-      </>
-    );
-  }
+import React from 'react';
+import { BrowserRouter,Route } from 'react-router-dom';
+import Home from './Pages/Home';
+import Register from './Pages/Register';
+import PriveRoute from './Component/PriveRoute';
+import "./App.css";
+import Login from './Pages/Login';
+const App = () => {
+  return (
+    <div>
+      <BrowserRouter>
+      <PriveRoute exact path="/" component={Home} />
+      <Route path="/register" component={Register} />
+      <Route path="/login" component={Login} />
+      </BrowserRouter>
+      
+    </div>
+  );
 }
 
 export default App;
