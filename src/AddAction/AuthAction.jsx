@@ -13,7 +13,7 @@ export const register = (email, password) => {
   };
 };
 
-export const login = (email, password, replace) => {
+export const login = (email, password) => {
   return (dispatch, state, { getFirebase }) => {
     let firebase = getFirebase();
     firebase
@@ -50,11 +50,11 @@ export const logout = () => {
     firebase
       .auth()
       .signOut()
-      .then((user) => {
-        console.log(user);
+      .then((res) => {
+        console.log(res);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
       });
   };
 };
