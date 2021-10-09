@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-
 import { register, loginWithGoogle } from "../AddAction/AuthAction";
 import { Link } from "react-router-dom";
+import "./Login.css";
 const Register = (props) => {
   if (!props.auth.isLoaded) return null;
   if (props.auth.uid) props.history.push("/");
@@ -16,14 +16,26 @@ const Register = (props) => {
   };
 
   return (
-    <div>
-      <h1>Register Now</h1>
+    <div className="form">
+      <h1 style={{ color: "black", textAlign: "center", fontWeight: "bolder" }}>
+        Register Now
+      </h1>
       <form onSubmit={handleSubmit}>
-        <h2>Email</h2>
-        <input type="email" name="email" placeholder="email" />
+        <h2 className="name">Email</h2>
+        <input
+          type="email"
+          name="email"
+          placeholder="email"
+          className="input"
+        />
         <br />
-        <h2>password</h2>
-        <input type="password" name="password" placeholder="password" />
+        <h2 className="name">password</h2>
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          className="input"
+        />
         <br />
         <hr />
         <button type="submit">submit</button>{" "}
@@ -40,7 +52,7 @@ const Register = (props) => {
     </div>
   );
 };
-const mSTP = (state) => {
+const mapStateToProps = (state) => {
   return { auth: state.firebase.auth };
 };
 
@@ -49,4 +61,4 @@ const mapDispatchToProps = {
   loginWithGoogle,
 };
 
-export default connect(mSTP, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
