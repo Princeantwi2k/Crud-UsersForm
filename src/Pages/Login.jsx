@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { login, loginWithGoogle } from "../AddAction/AuthAction";
 
 import { Link } from "react-router-dom";
-
+import "./Login.css";
 const Login = (props) => {
   if (!props.auth.isLoaded) return null;
 
@@ -19,13 +19,27 @@ const Login = (props) => {
 
   return (
     <div>
-      <h1>Login Now</h1>
-      <form onSubmit={handleSubmit}>
-        <h2>Email</h2>
-        <input type="email" name="email" placeholder="email" />
+      <form onSubmit={handleSubmit} className="form">
+        <h1
+          style={{ color: "black", textAlign: "center", fontWeight: "bolder" }}
+        >
+          Login Now
+        </h1>
+        <h2 className="name">Email</h2>
+        <input
+          type="email"
+          name="email"
+          placeholder="email"
+          className="input"
+        />
         <br />
-        <h2>password</h2>
-        <input type="password" name="password" placeholder="password" />
+        <h2 className="name">password</h2>
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          className="input"
+        />
         <br />
         <hr />
         <button type="submit">submit</button>{" "}
@@ -42,7 +56,7 @@ const Login = (props) => {
   );
 };
 
-const mSTP = (state) => {
+const mapStateToProps = (state) => {
   return { auth: state.firebase.auth };
 };
 
@@ -51,4 +65,4 @@ const mapDispatchToProps = {
   loginWithGoogle,
 };
 
-export default connect(mSTP, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

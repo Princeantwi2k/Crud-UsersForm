@@ -1,0 +1,58 @@
+.form {
+  margin-left: 35%;
+  margin-top: 10%;
+  margin-right: 30%;
+  border: 2px solid gray;
+  padding: 40px;
+  background-color: blanchedalmond;
+}
+.input {
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: gray;
+  margin-bottom: 9px;
+  width: 300px;
+  border-radius: 5px;
+  margin-left: 25px;
+  border: 1px solid #dddddd;
+  outline: none;
+  background: #eeeeee;
+}
+.name {
+  text-align: center;
+  color: blue;
+}
+.input:focus {
+  border-color: aqua;
+  background: #ffffff;
+}
+@media screen and (max-width: 480px) {
+  .form {
+    margin-left: 20%;
+    margin-top: 10%;
+    margin-right: 20%;
+    border: 2px solid gray;
+    padding: 40px;
+    background-color: blanchedalmond;
+  }
+  .input {
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: gray;
+    margin-bottom: 9px;
+    width: 150px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+  }
+  .name {
+    text-align: center;
+    color: blue;
+  }
+  .input:focus {
+    border-color: aqua;
+    background: #ffffff;
+  }
+}
