@@ -19,6 +19,7 @@ const Userlist = ({ users, deleteUser, editUser, id }) => {
 };
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     users: state.UserState.users,
   };
