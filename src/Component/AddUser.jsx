@@ -3,6 +3,7 @@ import "./UserForm.css";
 import { AddAction, getALLcontact } from "../AddAction/AddAction";
 import { connect } from "react-redux";
 import { logout } from "../AddAction/AuthAction";
+
 class AddUser extends Component {
   constructor(props) {
     super(props);
@@ -73,7 +74,7 @@ class AddUser extends Component {
           <input className="form_button" type="submit" value="Submit" />
         </form>
         <button onClick={this.props.logout} className="button">
-          Sign Out
+          LogOut
         </button>
       </>
     );
